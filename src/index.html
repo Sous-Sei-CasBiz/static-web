@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/image/card/favicon.ico" />
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.2.0/fonts/remixicon.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="/asset-style/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.css" />
+        <title>TechWind</title>
+
+    </head>
+
+    < class="">
+        <!-- =====================================-->
+        <div class="lg:px-20 px-10 py-2 border-b fixed top-0 left-0 right-0 bg-slate-50 shadow-md z-50 ">
+            <nav class="flex justify-between my-4 ">
+                <div class="logo">
+                    <div>
+                        <img src="/image/logo-dark.png" alt="tech wind home">
+                    </div>
+                </div>
+                <div class="menu hidden md:block">
+                    <div class="flex justify-between ">
+                        <div class="menu-item home ">
+                            <div class=" flex mx-2 font-medium hover:text-indigo-600 active navlist navlistdoc">
+                                <a href="#">HOME</a>
+                            </div>
+                        </div>
+                        <div class="menu-item landing">
+                            <div class="flex mx-2 font-medium hover:text-indigo-600 navlist navlist-lead "
+                                onclick="toggleMenu('navlist-lead')">
+                                <a href="#">LANDING</a>
+                                <i class="ri-arrow-down-s-line down"></i>
+                                <i class="ri-arrow-up-s-line hidden up"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item page">
+                            <div class="flex mx-2 font-medium hover:text-indigo-600 navlist navlist-page"
+                                onclick="toggleMenu('navlist-page')">
+                                <a href="#">PAGES</a>
+                                <i class="ri-arrow-down-s-line down"></i>
+                                <i class="ri-arrow-up-s-line hidden up"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item portfolio">
+                            <div class="flex mx-2 font-medium hover:text-indigo-600 navlist navlist-portfolio"
+                                onclick="toggleMenu('navlist-portfolio')">
+                                <a href="#">PORTFOLIO</a>
+                                <i class="ri-arrow-down-s-line down"></i>
+                                <i class="ri-arrow-up-s-line hidden up"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item docs">
+                            <div class="flex  mx-2 font-medium hover:text-indigo-600 navlist navlist-docs"
+                                onclick="toggleMenu('navlist-docs')">
+                                <a href="#">DOCS</a>
+                                <i class="ri-arrow-down-s-line down"></i>
+                                <i class="ri-arrow-up-s-line hidden up"></i>
+                            </div>
+                        </div>
+                        <div class="menu-item contact">
+                            <div class="flex mx-2 font-medium navlist hover:text-indigo-600 ">
+                                <a href="#">CONTACT</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="top-cart">
+                    <div class="flex items-center justify-between">
+                        <div class="flex">
+                            <div class="setting ">
+                                <i
+                                    class="ri-settings-5-line p-2 mr-2 rounded-[50%] border cursor-pointer hover:bg-blue-900 text-indigo-600 hover:text-slate-50 hover:border-blue-900 "></i>
+                            </div>
+                            <div class="add-card">
+                                <i
+                                    class="ri-shopping-cart-2-line p-2 mr-2 rounded-[50%] border-indigo-600 cursor-pointer bg-indigo-600 text-slate-50 "></i>
+                            </div>
+                        </div>
+                        <!-- menu btn -->
+                        <div class="flex">
+                            <div class="md:hidden cursor-pointer ml-2" id="btnmenu">
+                                <div class="w-6 h-1 bg-slate-900 rounded mt-1"></div>
+                                <div class="w-6 h-1 bg-slate-900 rounded mt-1"></div>
+                                <div class="w-6 h-1 bg-slate-900 rounded mt-1"></div>
+                            </div>
+                        </div>
+                        <i class="ri-close-line text-4xl md:hidden hidden" id="close"></i>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- phone screen mennu -->
+        <div class="menu md:hidden hidden fixed z-40 right-0 left-0 bg-gray-100 pt-[20px] transition duration-1000 delay-1000 "
+            id="menu">
+            <div class=" mb-8 px-10">
+                <div class="menu-item home my-4">
+                    <div class="flex conten-center mx-2 font-medium hover:text-blue-900 active navlist">
+                        <a href="#">HOME</a>
+                    </div>
+                </div>
+                <div class="menu-item landing my-4">
+                    <div class="flex conten-center mx-2 font-medium hover:text-blue-900  navlist navlist-lea"
+                        onclick="toggleMenu('navlist-lea')">
+                        <a href="#">LANDING</a>
+                        <i class="ri-arrow-down-s-line down"></i>
+                        <i class="ri-arrow-up-s-line hidden up"></i>
+                    </div>
+                </div>
+                <div class="menu-item page my-4">
+                    <div class="flex conten-center mx-2 font-medium hover:text-blue-900 navlist navlist-pag"
+                        onclick="toggleMenu('navlist-pag')">
+                        <a href="#">PAGES</a>
+                        <i class="ri-arrow-down-s-line down"></i>
+                        <i class="ri-arrow-up-s-line hidden up"></i>
+                    </div>
+                </div>
+                <div class="menu-item portfolio my-4">
+                    <div class="flex conten-center mx-2 font-medium hover:text-blue-900 navlist navlist-portfoli"
+                        onclick="toggleMenu('navlist-portfoli')">
+                        <a href="#">PORTFOLIO</a>
+                        <i class="ri-arrow-down-s-line down"></i>
+                        <i class="ri-arrow-up-s-line hidden up"></i>
+                    </div>
+                </div>
+                <div class="menu-item docs my-4">
+                    <div class="flex conten-center mx-2 font-medium hover:text-blue-900 navlist navlist-doc"
+                        onclick="toggleMenu('navlist-doc')">
+                        <a href="#">DOCS</a>
+                        <i class="ri-arrow-down-s-line down"></i>
+                        <i class="ri-arrow-up-s-line hidden up"></i>
+                    </div>
+                </div>
+                <div class="menu-item contact my-4">
+                    <div class="flex conten-center mx-2 font-medium hover:text-blue-900 navlist">
+                        <a href="#">CONTACT</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ====================banner=================-->
+        <div class="lg:px-40 px-10 py-20 mt-20 pb-20 border-b">
+            <div class=" md:flex block md:text-left text-center ">
+                <div class="md:w-[60%] w-full mt-10 self-center">
+                    <div class="banner-title">
+                        <h1 class="font-semibold lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5 text-black">
+                            Your Creativity Is Your
+                            <br><span class="text-indigo-600">Success</span>
+                        </h1>
+                    </div>
+                    <div class="banner-des">
+                        <p class="text-slate-400 text-lg ">
+                            Launch your campaign and benefit from our expertise
+                            on designing and managing conversion centered Tailwind CSS v3.x html page.
+                        </p>
+                    </div>
+                    <div class="banner-btn flex justify-center md:justify-start mt-6">
+                        <a href="#" class="mr-2">
+                            <div
+                                class="flex bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md mt-2 px-4 py-1">
+                                <i class="ri-mail-line mr-2"></i>
+                                <p>Get Start</p>
+                            </div>
+                        </a>
+                        <a href="#">
+                            <div
+                                class="flex bg-transparent hover:bg-indigo-600 border text-indigo-600 hover:text-white rounded-md mt-2 px-4 py-1">
+                                <i class="ri-folder-2-line mr-2"></i>
+                                <p>Documentation</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-[40%] w-[70%] mx-auto mt-10">
+                    <div class="banner-img">
+                        <img src="/image/Startup_SVG.svg" width="100%" alt="Get Start Your business">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ==================branding===================-->
+        <div class="lg:px-40 px-10 py-8 border-b">
+            <div>
+                <ul class="grid md:grid-cols-6 grid-cols-3 ">
+                    <li class="flex justify-center my-2"><img src="/image/amazon.svg" class="h-6" alt=""></li>
+                    <li class="flex justify-center my-2"><img src="/image/google.svg" class="h-6" alt=""></li>
+                    <li class="flex justify-center my-2"><img src="/image/lenovo.svg" class="h-6" alt=""></li>
+                    <li class="flex justify-center my-2"><img src="/image/paypal.svg" class="h-6" alt=""></li>
+                    <li class="flex justify-center my-2"><img src="/image/shopify.svg" class="h-6" alt=""></li>
+                    <li class="flex justify-center my-2"><img src="/image/spotify.svg" class="h-6" alt=""></li>
+                </ul>
+            </div>
+        </div>
+        <!-- ==================How It Work ?===================-->
+        <div class="lg:px-40 px-10 py-20 bg-gray-100">
+            <div class="text-center">
+                <div>
+                    <h1 class="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">How It Work ?
+                    </h1>
+                    <p class="text-slate-400 max-w-xl mx-auto">Start working with Tailwind CSS that can provide
+                        everything you need to generate awareness, drive traffic, connect.</p>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 grid-cols-1 items-center mt-10 gap-[30px]">
+                <div class="flex justify-center md:block">
+                    <img src="/image/SEO_SVG.svg" alt="" class="md:w-full w-[60%]">
+                </div>
+                <div class=" mt-8 md:mt-0 ">
+                    <div class="ltr:lg:ml-10 rtl:lg:mr-10">
+                        <h1 class="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Change the
+                            way you build website </h1>
+                        <p class="text-slate-400 max-w-xl">You can combine all the Techwind templates into a single one,
+                            you can take a component from the Application theme and use it in the Website.</p>
+                        <ul class="list-none text-slate-400 mt-4">
+                            <li class="mb-1 flex">
+                                <i class="ri-time-line text-indigo-600 text-xl mr-2"> </i>
+                                Digital Marketing Solutions for Tomorrow
+                            </li>
+                            <li class="mb-1 flex">
+                                <i class="ri-time-line text-indigo-600 text-xl mr-2"></i>
+                                Our Talented & Experienced Marketing Agency
+                            </li>
+                            <li class="mb-1 flex">
+                                <i class="ri-time-line text-indigo-600 text-xl mr-2"></i>
+                                Create your own skin to match your brand
+                            </li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href=""
+                                class="btn btn-link text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out text-xl">Find
+                                out More ></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="grid lg:grid-cols-12 md:grid-cols-2 grid-cols-1 items-center mt-10 gap-[30px]">
+                <div class="md:col-span-7 mt-8 md:mt-0">
+                    <div class="ltr:lg:ml-10 rtl:lg:mr-10">
+                        <h1 class="mb-6 md:text-3xl text-2xl md:leading-normal leading-normal font-semibold">Speed up
+                            your development
+                            <br><span class="text-indigo-600">Techwind.</span>
+                        </h1>
+                        <p class="text-slate-400 max-w-xl">You can combine all the Techwind templates into a single one,
+                            you can take a component from the Application theme and use it in the Website.</p>
+                        <ul class="list-none text-slate-400 mt-4">
+                            <li class="mb-1 flex">
+                                <i class="ri-time-line text-indigo-600 text-xl mr-2"> </i>
+                                Digital Marketing Solutions for Tomorrow
+                            </li>
+                            <li class="mb-1 flex">
+                                <i class="ri-time-line text-indigo-600 text-xl mr-2"></i>
+                                Our Talented & Experienced Marketing Agency
+                            </li>
+                            <li class="mb-1 flex">
+                                <i class="ri-time-line text-indigo-600 text-xl mr-2"></i>
+                                Create your own skin to match your brand
+                            </li>
+                        </ul>
+                        <div class="mt-4">
+                            <a href=""
+                                class="btn btn-link text-indigo-600 hover:text-indigo-600 after:bg-indigo-600 duration-500 ease-in-out text-xl">Find
+                                out More ></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="md:col-span-5 bg-slate-50 p-4 rounded-md shadow-md">
+                    <div>
+                        <img src="/image/Mobile_notification_SVG.svg" width="100%" alt="">
+                    </div>
+                    <div>
+                        <form action="">
+                            <label for="name">Your Name : *</label><br>
+                            <input type="text" name="name" id="n" placeholder="Name"
+                                class="w-[100%] h-10 rounded-md pl-2 mb-6 outline-0"><br>
+                            <label for="email">Your Email : *</label><br>
+                            <input type="email" name="email" id="mail" placeholder="Email"
+                                class="w-[100%] h-10 rounded-md pl-2 mb-6 outline-0"><br>
+                            <label for="pass">Password : *</label><br>
+                            <input type="password" name="pass" id="pw" placeholder="Password"
+                                class="w-[100%] h-10 rounded-md pl-2 mb-6 outline-0"><br>
+                            <input type="submit" value="Download"
+                                class="w-[100%] h-10 content-center bg-blue-900 rounded-md text-slate-50 mb-4 cursor-pointer">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ==================Work with some amazing partners===================-->
+        <div class="relative">
+            <div class="lg:px-40 px-10 py-20 ">
+                <div class="text-center">
+                    <h2 class="text-blue-900 text-xl mb-4">We believe in building each other and hence</h2>
+                    <h1 class="text-4xl mb-8">Work with some amazing partners</h1>
+                    <p class="text-slate-400">Start working with Tailwind CSS that can provide everything you need to
+                        <br>
+                        generate awareness, drive traffic, connect.</p>
+                </div>
+                <div class="mt-20 relative">
+                    <!-- =====slide===== -->
+                    <div class="slider">
+                        <div>
+                            <div class="grid md:grid-cols-2 mx-2 border rounded-md shadow-md mt-4">
+                                <div class="flex justify-center md:mt-0 mt-10">
+                                    <img src="/image/01.jpg"
+                                        class="w-[200px] md:w-[100%] md:rounded-[0px] rounded-[50%]" alt="">
+                                </div>
+                                <div class="desscription self-center p-4 ">
+                                    <div>
+                                        <p class="text-slate-400">" It seems that only fragments of the original text
+                                            remain
+                                            in
+                                            the Lorem Ipsum texts used today. "</p>
+                                        <h2 class="text-blue-900 text-xl mt-4">Thomas Israel</h2>
+                                        <p class="text-slate-400">Staff Engineer, Algolia </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="grid md:grid-cols-2 mx-2 border rounded-md shadow-md mt-4">
+                                <div class="flex justify-center md:mt-0 mt-10">
+                                    <img src="/image/05.jpg"
+                                        class="w-[200px] md:w-[100%] md:rounded-[0px] rounded-[50%]" alt="">
+                                </div>
+                                <div class="desscription self-center p-4 ">
+                                    <div>
+                                        <p class="text-slate-400">" It seems that only fragments of the original text
+                                            remain
+                                            in
+                                            the Lorem Ipsum texts used today. "</p>
+                                        <h2 class="text-blue-900 text-xl mt-4">Thomas Israel</h2>
+                                        <p class="text-slate-400">Staff Engineer, Algolia </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="grid md:grid-cols-2 mx-2 border rounded-md shadow-md mt-4">
+                                <div class="flex justify-center md:mt-0 mt-10">
+                                    <img src="/image/01.jpg"
+                                        class="w-[200px] md:w-[100%] md:rounded-[0px] rounded-[50%]" alt="">
+                                </div>
+                                <div class="desscription self-center p-4 ">
+                                    <div>
+                                        <p class="text-slate-400">" It seems that only fragments of the original text
+                                            remain
+                                            in
+                                            the Lorem Ipsum texts used today. "</p>
+                                        <h2 class="text-blue-900 text-xl mt-4">Thomas Israel</h2>
+                                        <p class="text-slate-400">Staff Engineer, Algolia </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="grid md:grid-cols-2 mx-2 border rounded-md shadow-md mt-4">
+                                <div class="flex justify-center md:mt-0 mt-10">
+                                    <img src="/image/05.jpg"
+                                        class="w-[200px] md:w-[100%] md:rounded-[0px] rounded-[50%]" alt="">
+                                </div>
+                                <div class="desscription self-center p-4">
+                                    <div>
+                                        <p class="text-slate-400">" It seems that only fragments of the original text
+                                            remain
+                                            in
+                                            the Lorem Ipsum texts used today. "</p>
+                                        <h2 class="text-blue-900 text-xl mt-4">Thomas Israel</h2>
+                                        <p class="text-slate-400">Staff Engineer, Algolia </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="grid md:grid-cols-2 mx-2 border rounded-md shadow-md mt-4">
+                                <div class="flex justify-center md:mt-0 mt-10">
+                                    <img src="/image/01.jpg"
+                                        class="w-[200px] md:w-[100%] md:rounded-[0px] rounded-[50%]" alt="">
+                                </div>
+                                <div class="desscription self-center p-4 ">
+                                    <div>
+                                        <p class="text-slate-400">" It seems that only fragments of the original text
+                                            remain
+                                            in
+                                            the Lorem Ipsum texts used today. "</p>
+                                        <h2 class="text-blue-900 text-xl mt-4">Thomas Israel</h2>
+                                        <p class="text-slate-400">Staff Engineer, Algolia </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="grid md:grid-cols-2 mx-2 border justify-between rounded-md shadow-md mt-4">
+                                <div class="flex justify-center md:mt-0 mt-10">
+                                    <img src="/image/05.jpg"
+                                        class="w-[200px] md:w-[100%] md:rounded-[0px] rounded-[50%]" alt="">
+                                </div>
+                                <div class="desscription self-center p-4 ">
+                                    <div>
+                                        <p class="text-slate-400">" It seems that only fragments of the original text
+                                            remain
+                                            in
+                                            the Lorem Ipsum texts used today. "</p>
+                                        <h2 class="text-blue-900 text-xl mt-4">Thomas Israel</h2>
+                                        <p class="text-slate-400">Staff Engineer, Algolia </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="arrow-pre absolute top-[50%]">
+                        <i
+                            class="ri-arrow-left-s-line bg-gray-100 rounded-[50%] p-2 shadow-md hover:bg-blue-900 hover:text-slate-50"></i>
+                    </div>
+                    <div class="arrow-next absolute top-[50%] right-0">
+                        <i
+                            class="ri-arrow-right-s-line bg-gray-100 rounded-[50%] p-2 shadow-md hover:bg-blue-900 hover:text-slate-50"></i>
+                    </div>
+                </div>
+                <div class="mt-20 pb-20">
+                    <div class=" grid lg:grid-cols-2 md:grid-cols-1 gap-4 ">
+                        <div class="self-center mr-10">
+                            <h1 class="text-4xl mb-8">Our Comfortable Rates</h1>
+                            <p class="text-slate-400 mt-10">
+                                Start working with Tailwind CSS that can provide everything you need to generate
+                                awareness,
+                                drive traffic, connect.
+                            </p>
+                            <div class="">
+                                <a href="#" class="mr-2 text-center">
+                                    <div
+                                        class="flex bg-indigo-600 justify-center hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md mt-10 px-4 py-2  ">
+                                        <i class="ri-mastercard-line mr-2"></i>
+                                        <p>Subcribe Now</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="self-center grid md:grid-cols-2 grid-cols-1">
+                            <div class="rounded-md shadow-md mt-10 px-5 py-10">
+                                <h1 class="mb-6  md:text-2xl text-1xl md:leading-normal leading-normal font-semibold">
+                                    <span class="text-indigo-600">STARTER</span><br>
+                                </h1>
+                                <div class="flex mb-5">
+                                    <span class="text-xl font-semibold">$</span>
+                                    <span class="price text-4xl font-semibold mb-0">39</span>
+                                    <span class="text-xl font-semibold self-end mb-1">/mo</span>
+                                </div>
+
+                                <ul class="list-none text-slate-400 mt-4">
+                                    <li class="mb-1 flex">
+                                        <i class="ri-time-line text-indigo-600 text-xl mr-2"> </i>
+                                        Digital Marketing Solutions for Tomorrow
+                                    </li>
+                                    <li class="mb-1 flex">
+                                        <i class="ri-time-line text-indigo-600 text-xl mr-2"></i>
+                                        Our Talented & Experienced Marketing Agency
+                                    </li>
+                                    <li class="mb-1 flex">
+                                        <i class="ri-time-line text-indigo-600 text-xl mr-2"></i>
+                                        Create your own skin to match your brand
+                                    </li>
+                                </ul>
+                                <div class="">
+                                    <a href="#" class="mr-2 text-center">
+                                        <div
+                                            class="flex bg-indigo-600 justify-center hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md mt-10 px-4 py-2  ">
+                                            <i class="ri-mastercard-line mr-2"></i>
+                                            <p>Subcribe Now</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="self-center rounded-md mt-10 shadow-md px-5 py-4 bg-gray-100">
+                                <h1 class="mb-6 md:text-2xl text-1xl md:leading-normal leading-normal font-semibold">
+                                    <span class="text-indigo-600">PROFESSIONAL</span><br>
+                                </h1>
+                                <div class="flex mb-5">
+                                    <span class="text-xl font-semibold">$</span>
+                                    <span class="price text-4xl font-semibold mb-0">59</span>
+                                    <span class="text-xl font-semibold self-end mb-1">/mo</span>
+                                </div>
+
+                                <ul class="list-none text-slate-400 mt-4">
+                                    <li class="mb-1 flex">
+                                        <i class="ri-time-line text-indigo-600 text-xl mr-2"> </i>
+                                        Digital Marketing Solutions for Tomorrow
+                                    </li>
+                                    <li class="mb-1 flex">
+                                        <i class="ri-time-line text-indigo-600 text-xl mr-2"></i>
+                                        Our Talented & Experienced Marketing Agency
+                                    </li>
+                                    <li class="mb-1 flex">
+                                        <i class="ri-time-line text-indigo-600 text-xl mr-2"></i>
+                                        Create your own skin to match your brand
+                                    </li>
+                                </ul>
+                                <div class=" ">
+                                    <a href="#" class="mr-2 text-center">
+                                        <div
+                                            class="flex bg-indigo-600 justify-center hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md mt-10 px-4 py-2  ">
+                                            <i class="ri-mastercard-line mr-2"></i>
+                                            <p>Subcribe Now</p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="triangle-bg1 absolute"></div>
+        </div>
+
+        <!-- =====================================-->
+        <div class="relative">
+            <div class="lg:px-40 px-10 bg-gray-100 pb-20">
+                <div class="pt-20 pb-20">
+                    <div class="grid lg:grid-cols-2 mt-10 gap-4">
+                        <div class="flex">
+                            <i class="ri-question-line mr-2 text-2xl text-indigo-600"></i>
+                            <div>
+                                <h1 class="text-xl">
+                                    How Our
+                                    <span class="text-indigo-600">Techwind</span>
+                                    Work ?
+                                </h1>
+                                <p class="text-slate-400">
+                                    Due to its widespread use as filler text for layouts, non-readability is of great
+                                    importance: human perception is tuned to recognize certain patterns and repetitions
+                                    in
+                                    texts.
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex">
+                                <i class="ri-question-line mr-2 text-2xl text-indigo-600"></i>
+                                <div>
+                                    <h1 class="text-xl">
+                                        What is the main process open account ?
+                                    </h1>
+                                    <p class="text-slate-400">
+                                        If the distribution of letters and 'words' is random, the reader will not be
+                                        distracted from making a neutral judgement on the visual impact
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid lg:grid-cols-2 mt-10 gap-4">
+                        <div class="flex">
+                            <i class="ri-question-line mr-2 text-2xl text-indigo-600"></i>
+                            <div class="">
+                                <h1 class="text-xl">
+                                    How to make unlimited data entry ?
+                                </h1>
+                                <p class="text-slate-400">
+                                    Furthermore, it is advantageous when the dummy text is relatively realistic so that
+                                    the
+                                    layout impression of the final publication is not compromised.
+                                </p>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex">
+                                <i class="ri-question-line mr-2 text-2xl text-indigo-600"></i>
+                                <div class="">
+                                    <h1 class="text-xl">
+                                        Is
+                                        <span class="text-indigo-600">Techwind</span>
+                                        safer to use with my account ?
+                                    </h1>
+                                    <p class="text-slate-400">
+                                        The most well-known dummy text is the 'Lorem Ipsum', which is said to have
+                                        originated in the 16th century. Lorem Ipsum is composed in a pseudo-Latin
+                                        language
+                                        which more or less corresponds to 'proper' Latin.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-20">
+                        <h1 class="text-4xl">Have Question ? Get in touch!</h1>
+                        <p>Start working with Tailwind CSS that can provide everything you need to <br> generate
+                            awareness,
+                            drive traffic, connect.</p>
+                        <a href="#" class="mr-2 flex justify-center">
+                            <div
+                                class="flex bg-indigo-600 justify-center hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md mt-10 px-4 py-2 ">
+                                <i class="ri-phone-line mr-2"></i>
+                                <p>Contact Us</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="triangle-bg absolute"></div>
+        </div>
+
+
+        <!-- =====================================-->
+        <div class="lg:px-20 px-10 py-20 bg-stone-900 ">
+            <div class="grid lg:grid-cols-4">
+                <div class="mt-10">
+                    <img src="/image/logo-light.png" alt="">
+                    <p class="text-slate-50 mt-10">
+                        Start working with Tailwind CSS that can provide everything you need to generate awareness,
+                        drive traffic, connect.
+                    </p>
+                    <div>
+                        <div class="flex justify-start mt-6">
+                            <div>
+                                <a href="">
+                                    <i
+                                        class="ri-shopping-cart-2-line border p-1 rounded-md m-[2px] text-slate-50 hover:bg-indigo-600 hover:border-indigo-600"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="">
+                                    <i
+                                        class="ri-dribbble-line border p-1 rounded-md m-[2px] text-slate-50 hover:bg-indigo-600 hover:border-indigo-600"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="">
+                                    <i
+                                        class="ri-behance-line border p-1 rounded-md m-[2px] text-slate-50 hover:bg-indigo-600 hover:border-indigo-600"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="">
+                                    <i
+                                        class="ri-linkedin-line border p-1 rounded-md m-[2px] text-slate-50 hover:bg-indigo-600 hover:border-indigo-600"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="">
+                                    <i
+                                        class="ri-facebook-fill border p-1 rounded-md m-[2px] text-slate-50 hover:bg-indigo-600 hover:border-indigo-600"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="">
+                                    <i
+                                        class="ri-instagram-line border p-1 rounded-md m-[2px] text-slate-50 hover:bg-indigo-600 hover:border-indigo-600"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="">
+                                    <i
+                                        class="ri-twitter-line border p-1 rounded-md m-[2px] text-slate-50 hover:bg-indigo-600 hover:border-indigo-600"></i>
+                                </a>
+                            </div>
+                            <div>
+                                <a href="">
+                                    <i
+                                        class="ri-mail-line border p-1 rounded-md m-[2px] text-slate-50 hover:bg-indigo-600 hover:border-indigo-600"></i>
+                                </a>
+                            </div>
+                            <div class="hover:bg-indigo-600">
+                                <a href="">
+                                    <i
+                                        class="ri-save-line border p-1 rounded-md m-[2px] text-slate-50 hover:bg-indigo-600 hover:border-indigo-600"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <h2 class="text-slate-50 text-2xl mb-4">Company</h2>
+                    <div class="flex">
+                        <i class="ri-arrow-right-s-line mr-2 mb-2 text-slate-50"></i>
+                        <p class="text-slate-50">About Us</p>
+                    </div>
+                    <div class="flex">
+                        <i class="ri-arrow-right-s-line mr-2 mb-2 text-slate-50"></i>
+                        <p class="text-slate-50">Service</p>
+                    </div>
+                    <div class="flex">
+                        <i class="ri-arrow-right-s-line mr-2 mb-2 text-slate-50"></i>
+                        <p class="text-slate-50">Team</p>
+                    </div>
+                    <div class="flex">
+                        <i class="ri-arrow-right-s-line mr-2 mb-2 text-slate-50"></i>
+                        <p class="text-slate-50">Pricing</p>
+                    </div>
+                    <div class="flex">
+                        <i class="ri-arrow-right-s-line mr-2 mb-2 text-slate-50"></i>
+                        <p class="text-slate-50">Project</p>
+                    </div>
+                    <div class="flex">
+                        <i class="ri-arrow-right-s-line mr-2 mb-2 text-slate-50"></i>
+                        <p class="text-slate-50">Blog</p>
+                    </div>
+                    <div class="flex">
+                        <i class="ri-arrow-right-s-line mr-2 mb-2 text-slate-50"></i>
+                        <p class="text-slate-50">Login</p>
+                    </div>
+                </div>
+                <div class="pr-20 mt-10 mr-10">
+                    <h2 class="text-slate-50 text-2xl mb-4">Usefull Links</h2>
+                    <div class="flex">
+                        <i class="ri-arrow-right-s-line mr-2 mb-2 text-slate-50"></i>
+                        <p class="text-slate-50 whitespace-nowrap">Terms of Services</p>
+                    </div>
+                    <div class="flex">
+                        <i class="ri-arrow-right-s-line mr-2 mb-2 text-slate-50"></i>
+                        <p class="text-slate-50">Privacy Policy</p>
+                    </div>
+                    <div class="flex">
+                        <i class="ri-arrow-right-s-line mr-2 mb-2 text-slate-50"></i>
+                        <p class="text-slate-50">Documentation</p>
+                    </div>
+                    <div class="flex">
+                        <i class="ri-arrow-right-s-line mr-2 mb-2 text-slate-50"></i>
+                        <p class="text-slate-50"> Changelog</p>
+                    </div>
+                    <div class="flex">
+                        <i class="ri-arrow-right-s-line mr-2 mb-2 text-slate-50"></i>
+                        <p class="text-slate-50">Widget</p>
+                    </div>
+                </div>
+                <div class="mt-10">
+                    <h2 class="text-slate-50 text-2xl mb-4 ">Newsletter</h2>
+                    <p class="text-slate-50 mb-4">Sign up and receive the latest tips via email.</p>
+                    <form action="">
+                        <label for="mail" class="text-slate-50 text-xl">Write your email *</label>
+                        <input type="email" name="email" id="mail" placeholder="Email"
+                            class="w-[100%] h-10 rounded-md pl-2 mb-6 mt-2 outline-0 bg-slate-500 placeholder-gray-50 placeholder-opacity-[0.5] text-slate-50">
+                        <input type="submit" value="Subcribe"
+                            class="w-[100%] h-10 content-center bg-blue-900 rounded-md text-slate-50 mb-4 cursor-pointer">
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="py-8 md:px-20 px-10 border-t border-slate-800 bg-stone-900 md:flex justify-between block">
+            <div class="flex justify-center py-2">
+                <i class="ri-copyright-line mr-2 text-slate-50"></i>
+                <p class="text-slate-50">TechWind. Design By @SOUS-SEI</p>
+            </div>
+            <div class="flex justify-center py-2">
+                <img src="/image/card/american-ex.png" alt="" class="mr-2 w-[40px]">
+                <img src="/image/card/discover.png" alt="" class="mr-2 w-[40px]">
+                <img src="/image/card/master-card.png" alt="" class="mr-2 w-[40px]">
+                <img src="/image/card/paypal.png" alt="" class="mr-2 w-[40px]">
+                <img src="/image/card/visa.png" alt="" class="mr-2 w-[40px]">
+            </div>
+        </div>
+        <!-- =====================================-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+        <script src="/asset-script/index.js"></script>
+        </body>
+
+</html>

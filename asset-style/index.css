@@ -1,0 +1,23 @@
+.active {
+    border-bottom: 1px solid blue;
+    color: blue;
+}
+.triangle-bg{
+    background: #1c1917;
+    content: '';
+    left: 0;
+    bottom: -2px; 
+    width: 100%;
+    height: 100px;
+    clip-path: polygon(100% 0,0 100%, 100% 100%);
+}
+.triangle-bg1{
+    background: #f3f4f6;
+    padding-top: 100px;
+    content: '';
+    left: 0;
+    bottom: 0; 
+    width: 100%;
+    height: 100px;
+    clip-path: polygon(100% 0,0 100%, 100% 100%);
+}
